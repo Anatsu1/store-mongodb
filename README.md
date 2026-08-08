@@ -1,3 +1,5 @@
+![BeaStore — Control de catálogo](docs/banner.png)
+
 # BeaStore — Control de catálogo
 
 Panel de administración de un catálogo de productos electrónicos. Permite dar de alta un
@@ -22,6 +24,7 @@ Thymeleaf**, sin frameworks de CSS ni de JavaScript.
 - [Modelo de datos](#modelo-de-datos)
 - [Validaciones](#validaciones)
 - [Capturas](#capturas)
+- [Identidad visual](#identidad-visual)
 - [Correcciones aplicadas](#correcciones-aplicadas)
 - [Próximos pasos](#próximos-pasos)
 
@@ -116,6 +119,7 @@ src/main/
     ├── static/
     │   ├── index.html                         Portada
     │   ├── css/beastore.css                   Sistema visual completo
+    │   ├── img/logo.svg                       Marca, también usada como favicon
     │   └── js/{etiqueta,catalogo}.js
     └── templates/
         ├── fragments/base.html                Cabecera, barra y avisos compartidos
@@ -289,6 +293,32 @@ Pide confirmación nombrando el producto y vuelve al listado con el resultado.
 
 ---
 
+## Identidad visual
+
+<img src="src/main/resources/static/img/logo.svg" alt="Logo de BeaStore" width="88" align="left" hspace="20" vspace="6">
+
+La marca es la etiqueta de estante: la esquina troquelada, la banda ámbar superior y las líneas
+de precio. Es el mismo elemento que aparece en cada fila del listado y que se arma en vivo en los
+formularios, así que el logo no decora el producto, lo cita.
+
+<br clear="left">
+
+Un solo SVG de geometría pura (`static/img/logo.svg`, 4 formas, sin tipografías incrustadas)
+sirve para la barra superior y para el favicon, y se mantiene legible tanto sobre el papel claro
+como sobre el azul tinta.
+
+| Rol | Color | Uso |
+|---|---|---|
+| Tinta | `#101c31` | Barra superior, portada, titulares |
+| Papel | `#eff0ec` | Fondo de las pantallas de trabajo |
+| Ámbar | `#f0a202` | Banda de la etiqueta, acción principal, foco |
+| Crema | `#fffdf6` | Cuerpo de la etiqueta de precio |
+
+Tipografías: **Archivo** para titulares, **Instrument Sans** para texto e **IBM Plex Mono** para
+identificadores, fechas y precios, con cifras tabulares para que las columnas alineen.
+
+---
+
 ## Correcciones aplicadas
 
 Estado del proyecto al retomarlo y qué se hizo:
@@ -334,7 +364,8 @@ de acentos.
 
 **Interfaz.** Se reemplazó Bootstrap por una hoja de estilos propia, se rehicieron las cuatro
 pantallas sobre fragmentos de Thymeleaf compartidos, se agregaron avisos de resultado, estado
-vacío y la vista previa de la etiqueta.
+vacío y la vista previa de la etiqueta. El proyecto tampoco tenía marca ni favicon: la pestaña
+del navegador mostraba el ícono genérico.
 
 ---
 

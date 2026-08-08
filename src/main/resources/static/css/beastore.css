@@ -92,10 +92,9 @@ body.papel-reticulado {
     color: inherit;
 }
 
-.marca-cuadro {
-    width: 18px;
-    height: 18px;
-    background: var(--ambar);
+.marca-logo {
+    width: 28px;
+    height: 28px;
     flex: none;
 }
 

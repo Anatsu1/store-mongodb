@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BeaStore">
+    <title>BeaStore</title>
+    <!-- Etiqueta de estante: la esquina troquelada y la banda ambar son el motivo
+         que se repite en toda la interfaz. El contorno mantiene la silueta legible
+         tanto sobre el papel claro como sobre la barra azul. -->
+    <path d="M3 3 H61 V41 L41 61 H3 Z" fill="#fffdf6" stroke="#101c31" stroke-width="4"
+          stroke-linejoin="round"/>
+    <path d="M5 5 H59 V13 H5 Z" fill="#f0a202"/>
+    <rect x="14" y="27" width="36" height="8" fill="#101c31"/>
+    <rect x="14" y="42" width="20" height="8" fill="#f0a202"/>
+</svg>
