@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="cabeza(titulo)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="|${titulo} · BeaStore|">BeaStore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap">
+    <link rel="stylesheet" th:href="@{/css/beastore.css}">
+</head>
+<body>
+
+<!-- Barra de navegación compartida. -->
+<header class="barra" th:fragment="barra(detalle)">
+    <div class="contenedor barra-interior">
+        <a class="marca" th:href="@{/}">
+            <span class="marca-cuadro" aria-hidden="true"></span>
+            <span>
+                <span class="marca-texto">BeaStore</span>
+                <span class="marca-sub" style="display:block">Control de catálogo</span>
+            </span>
+        </a>
+        <div class="barra-datos">
+            <span th:text="${detalle}">—</span>
+            <span>MongoDB</span>
+        </div>
+    </div>
+</header>
+
+<!-- Mensajes de resultado de la última acción. -->
+<div th:fragment="avisos" th:remove="tag">
+    <div class="aviso aviso-exito" role="status" th:if="${mensaje}" th:text="${mensaje}"></div>
+    <div class="aviso aviso-error" role="alert" th:if="${error}" th:text="${error}"></div>
+</div>
+
+</body>
+</html>

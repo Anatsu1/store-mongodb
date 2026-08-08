@@ -1,65 +1,68 @@
 package com.boostmyfool.beastore.models;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Size;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Date;
-
+/** Datos que llegan desde el formulario, con sus reglas de validacion. */
 public class ProductosDTO {
+
     @NotEmpty(message = "El nombre es requerido")
     private String nombre;
+
     @NotEmpty(message = "La marca es requerida")
     private String marca;
+
     @NotEmpty(message = "La categoria es requerida")
     private String categoria;
-    @Min(0)
+
+    @Min(value = 0, message = "El precio no puede ser negativo")
     private double precio;
 
-    @Size(min = 10,message = "La descripcion debe contener por lo menos 10 caracteres")
-    @Size(max = 2000,message = "La descripcion no debe superar los 2000 caracteres")
+    @Size(min = 10, message = "La descripcion debe contener por lo menos 10 caracteres")
+    @Size(max = 2000, message = "La descripcion no debe superar los 2000 caracteres")
     private String descripcion;
 
     private MultipartFile imagenArchivo;
 
-    public @NotEmpty(message = "El nombre es requerido") String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(@NotEmpty(message = "El nombre es requerido") String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public @NotEmpty(message = "La marca es requerida") String getMarca() {
+    public String getMarca() {
         return marca;
     }
 
-    public void setMarca(@NotEmpty(message = "La marca es requerida") String marca) {
+    public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    public @NotEmpty(message = "La categoria es requerida") String getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(@NotEmpty(message = "La categoria es requerida") String categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
-    @Min(0)
     public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(@Min(0) double precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
-    public @Size(min = 10, message = "La descripcion debe contener por lo menos 10 caracteres") @Size(max = 2000, message = "La descripcion no debe superar los 2000 caracteres") String getDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(@Size(min = 10, message = "La descripcion debe contener por lo menos 10 caracteres") @Size(max = 2000, message = "La descripcion no debe superar los 2000 caracteres") String descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 

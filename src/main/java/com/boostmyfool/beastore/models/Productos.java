@@ -1,9 +1,11 @@
 package com.boostmyfool.beastore.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.bson.types.ObjectId;
 import java.util.Date;
 
+@Document(collection = "productos")
 public class Productos {
     @Id
     private ObjectId id;
